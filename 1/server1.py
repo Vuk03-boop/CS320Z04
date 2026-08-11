@@ -16,7 +16,7 @@ with socket(AF_INET, SOCK_STREAM) as s:
         last_edited_date=float(conn.recv(1024).decode("utf-8"))
         personal_last_file_edited_date=os.path.getmtime(fajl)
         print(personal_last_file_edited_date)
-        if personal_last_file_edited_date >= last_edited_date:
+        if personal_last_file_edited_date > last_edited_date:
             print("Server1 ima noviju verziju\n")
         elif personal_last_file_edited_date < last_edited_date:
             print("Server2 ima noviju verziju\n")
